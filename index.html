@@ -7,76 +7,183 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { background-color: #0f172a; color: white; }
-        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .gradient-text { background: linear-gradient(90deg, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+        :root { --accent: #38bdf8; --bg: #030014; --glass: rgba(255, 255, 255, 0.03); }
+        body { background-color: var(--bg); color: white; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        .glass-card { background: var(--glass); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); transition: all 0.3s ease; }
+        .glass-card:hover { border-color: var(--accent); transform: translateY(-5px); background: rgba(56, 189, 248, 0.04); }
+        .gradient-text { background: linear-gradient(90deg, #00f2fe, #4facfe, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .skill-badge { @apply px-3 py-1 text-[10px] font-bold bg-white/5 border border-white/10 rounded-full text-gray-300 uppercase; }
+        .section-title { @apply text-5xl font-black mb-14 uppercase italic tracking-tighter; }
     </style>
 </head>
-<body class="font-sans">
+<body class="antialiased selection:bg-sky-500/30">
 
-    <nav class="p-6 flex justify-between items-center max-w-6xl mx-auto">
-        <h1 class="text-2xl font-bold gradient-text">RC.</h1>
-        <div class="space-x-6">
-            <a href="#projects" class="hover:text-blue-400">Projects</a>
-            <a href="mailto:chaubeyrishabh00@gmail.com" class="glass px-4 py-2 rounded-full">Hire Me</a>
+    <nav class="fixed top-0 w-full z-50 glass-card border-b border-white/5 px-8 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-extrabold tracking-tighter italic uppercase">Rishabh<span class="text-sky-400">.</span></h1>
+            <div class="flex space-x-6 text-[10px] font-bold uppercase tracking-widest text-gray-400">
+                <a href="#about" class="hover:text-sky-400 transition">About</a>
+                <a href="#projects" class="hover:text-sky-400 transition">Projects</a>
+                <a href="#training" class="hover:text-sky-400 transition">Training</a>
+                <a href="#achievements" class="hover:text-sky-400 transition">Achievements</a>
+            </div>
         </div>
     </nav>
 
-    <section class="py-20 text-center max-w-4xl mx-auto px-4">
-        <h2 class="text-5xl md:text-7xl font-extrabold mb-6">Hi, I'm <span class="gradient-text">Rishabh Chaubey</span></h2>
-        <p class="text-gray-400 text-xl mb-8">Data Analyst & ML Developer | B.Tech CSE at LPU</p>
-        <div class="flex justify-center space-x-4">
-            <a href="https://github.com/chaubey5" class="text-3xl hover:text-blue-400"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/rishabhchaubey5/" class="text-3xl hover:text-blue-400"><i class="fab fa-linkedin"></i></a>
+    <section class="min-h-screen flex flex-col items-center justify-center pt-20 px-6 text-center">
+        <div class="max-w-5xl">
+            <h2 class="text-6xl md:text-9xl font-black mb-8 tracking-tighter uppercase italic leading-[0.85]">
+                Rishabh <span class="gradient-text italic">Chaubey</span>
+            </h2>
+            <div class="flex flex-wrap justify-center gap-3 mb-10">
+                <span class="skill-badge text-sky-400">Full Stack Developer</span>
+                <span class="skill-badge text-purple-400">Data Scientist</span>
+                <span class="skill-badge text-green-400">AI / ML Engineer</span>
+            </div>
+            <div class="flex justify-center space-x-8 text-2xl">
+                <a href="https://github.com/chaubey5" target="_blank" class="hover:text-sky-400 transition"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/rishabhchaubey5/" target="_blank" class="hover:text-sky-400 transition"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:chaubeyrishabh00@gmail.com" class="hover:text-sky-400 transition"><i class="fas fa-envelope"></i></a>
+            </div>
         </div>
     </section>
 
-    <section id="projects" class="max-w-6xl mx-auto py-20 px-4">
-        <h3 class="text-3xl font-bold mb-12 border-b border-gray-700 pb-4">Featured Projects</h3>
+    <section id="about" class="py-24 max-w-7xl mx-auto px-6">
+        <div class="glass-card p-12 rounded-[3rem] border-l-8 border-sky-500 bg-gradient-to-br from-white/5 to-transparent">
+            <h3 class="section-title">Beyond the Code</h3>
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div class="space-y-6">
+                    <p class="text-gray-300 text-xl leading-relaxed">
+                        I am a <strong>Computer Science Engineer</strong> with a relentless drive to bridge the gap between complex data and intuitive user experiences. My expertise spans across the full stack—from architecting robust backends with <strong>Django</strong> to crafting data-driven insights using <strong>Machine Learning</strong>.
+                    </p>
+                    <p class="text-gray-400 text-lg leading-relaxed italic">
+                        I don't just write code; I build systems that solve problems. Whether it's achieving 99% accuracy in predictive models or designing luxury e-commerce interfaces, I focus on <strong>scalability, efficiency, and impact.</strong>
+                    </p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl bg-sky-500/5 border-sky-500/20">
+                    <h4 class="text-sky-400 font-bold uppercase mb-4 tracking-widest">My Philosophy</h4>
+                    <ul class="space-y-4 text-sm text-gray-300">
+                        <li class="flex items-start"><span class="text-sky-500 mr-2">▹</span> <strong>Continuous Evolution:</strong> Tech moves fast; I move faster by staying at the edge of GenAI and LLMs.</li>
+                        <li class="flex items-start"><span class="text-sky-500 mr-2">▹</span> <strong>Data-First Thinking:</strong> Every decision should be backed by patterns, not just intuition.</li>
+                        <li class="flex items-start"><span class="text-sky-500 mr-2">▹</span> <strong>User Centricity:</strong> If a tool isn't easy to use, it's not finished.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 max-w-7xl mx-auto px-6">
+        <h3 class="section-title text-sky-500">Portfolio Work</h3>
         <div class="grid md:grid-cols-2 gap-8">
-            
-            <div class="glass p-6 rounded-2xl hover:scale-105 transition">
-                <h4 class="text-2xl font-bold mb-2">Auto Sector Performance Analytics</h4>
-                <p class="text-gray-400 mb-4">ML Dashboard using K-Means (0.85 Silhouette Score) and Bagging Classifier (99% Accuracy).</p>
-                <div class="flex space-x-3">
-                    <span class="text-xs bg-blue-500/20 text-blue-400 px-2 py-1 rounded">Python</span>
-                    <span class="text-xs bg-purple-500/20 text-purple-400 px-2 py-1 rounded">Streamlit</span>
+            <div class="glass-card p-10 rounded-[2rem]">
+                <div class="flex justify-between items-start mb-4">
+                    <h4 class="text-2xl font-bold italic">Auto Sector Performance Analytics</h4>
+                    <span class="text-[10px] font-bold text-gray-500 uppercase">Nov 2025 - Dec 2025</span>
                 </div>
-                <div class="mt-6 flex space-x-4">
-                    <a href="https://github.com/chaubey5/Auto-Sector-Performance-Analytics" class="text-blue-400 font-bold">Code <i class="fas fa-code"></i></a>
-                    <a href="#" class="text-green-400 font-bold">Live Demo <i class="fas fa-external-link-alt"></i></a>
-                </div>
+                <p class="text-gray-400 text-sm mb-6">Built a predictive system using data from 230+ manufacturers. Achieved 99% accuracy in revenue tier classification using Bagging Classifier.</p>
+                <a href="https://auto-sector-performance-analytics-7crufgjsyqhxhbfakcscrv.streamlit.app/" target="_blank" class="text-sky-400 text-xs font-bold border-b border-sky-400/20 pb-1 uppercase">Launch App</a>
             </div>
 
-            <div class="glass p-6 rounded-2xl hover:scale-105 transition">
-                <h4 class="text-2xl font-bold mb-2">Mobile Sales Dashboard</h4>
-                <p class="text-gray-400 mb-4">Analyzed 3,800+ transactions using Power BI, DAX, and Power Query to find high-growth regions.</p>
-                <div class="flex space-x-3">
-                    <span class="text-xs bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded">Power BI</span>
-                    <span class="text-xs bg-red-500/20 text-red-400 px-2 py-1 rounded">DAX</span>
+            <div class="glass-card p-10 rounded-[2rem]">
+                <div class="flex justify-between items-start mb-4">
+                    <h4 class="text-2xl font-bold italic">Mobile Sales Dashboard</h4>
+                    <span class="text-[10px] font-bold text-gray-500 uppercase">Nov 2025 - Dec 2025</span>
                 </div>
-                <div class="mt-6">
-                    <a href="#" class="text-green-400 font-bold">Live Demo <i class="fas fa-external-link-alt"></i></a>
-                </div>
+                <p class="text-gray-400 text-sm mb-6">Interactive Power BI dashboard for 3,800+ transactions. Optimized inventory decisions via deep-dive sales trend analysis.</p>
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiZDU0YzAxMDQtMjg4OC00NmM1LWI2ZWItZTkxNjk0OWE1OWYwIiwidCI6ImUxNGU3M2ViLTUyNTEtNDM4OC04ZDY3LThmOWYyZTJkNWE0NiIsImMiOjEwfQ%3D%3D" target="_blank" class="text-sky-400 text-xs font-bold border-b border-sky-400/20 pb-1 uppercase">View Insights</a>
             </div>
 
+            <div class="glass-card p-10 rounded-[2rem]">
+                <div class="flex justify-between items-start mb-4">
+                    <h4 class="text-2xl font-bold italic">Fashion Pulse AI</h4>
+                    <span class="text-[10px] font-bold text-gray-500 uppercase">May 2025 - Jun 2025</span>
+                </div>
+                <p class="text-gray-400 text-sm mb-6">Virtual stylist using Gemini LLM. Real-time styling recommendations based on seasonal trends and user preferences.</p>
+                <a href="https://chaubey5.github.io/aiproject/" target="_blank" class="text-sky-400 text-xs font-bold border-b border-sky-400/20 pb-1 uppercase">Live Demo</a>
+            </div>
+
+            <div class="glass-card p-10 rounded-[2rem]">
+                <div class="flex justify-between items-start mb-4">
+                    <h4 class="text-2xl font-bold italic">Quiz Elite</h4>
+                    <span class="text-[10px] font-bold text-gray-500 uppercase">Apr 2024 - May 2024</span>
+                </div>
+                <p class="text-gray-400 text-sm mb-6">Dynamic learning platform with gamified logic. Real-time feedback system to enhance student engagement.</p>
+                <a href="https://quiz-elite-ndttadf53-rishabhs-projects-1b507e30.vercel.app/" target="_blank" class="text-sky-400 text-xs font-bold border-b border-sky-400/20 pb-1 uppercase">Launch Quiz</a>
+            </div>
+
+            <div class="glass-card p-10 rounded-[2rem]">
+                <div class="flex justify-between items-start mb-4">
+                    <h4 class="text-2xl font-bold italic">Elite-Kicks</h4>
+                    <span class="text-[10px] font-bold text-gray-500 uppercase">Jan 2024 - Mar 2024</span>
+                </div>
+                <p class="text-gray-400 text-sm mb-6">Premium e-commerce storefront. Focused on high-fidelity UI/UX and seamless product catalog management.</p>
+                <a href="https://elite-kicks-6uiudp322-rishabhs-projects-1b507e30.vercel.app/" target="_blank" class="text-sky-400 text-xs font-bold border-b border-sky-400/20 pb-1 uppercase">Visit Store</a>
+            </div>
         </div>
     </section>
 
-    <section class="max-w-6xl mx-auto py-20 px-4 text-center">
-        <h3 class="text-3xl font-bold mb-8">My Toolkit</h3>
-        <div class="flex flex-wrap justify-center gap-4">
-            <span class="glass px-6 py-2 rounded-full">Python</span>
-            <span class="glass px-6 py-2 rounded-full">C/C++</span>
-            <span class="glass px-6 py-2 rounded-full">Power BI</span>
-            <span class="glass px-6 py-2 rounded-full">Scikit-Learn</span>
-            <span class="glass px-6 py-2 rounded-full">SQL</span>
-            <span class="glass px-6 py-2 rounded-full">Pandas</span>
+    <section id="training" class="py-24 max-w-7xl mx-auto px-6">
+        <h3 class="section-title text-purple-400 text-center">Industrial Training</h3>
+        <div class="max-w-4xl mx-auto">
+            <div class="glass-card p-12 rounded-[3rem] border-r-8 border-purple-500 bg-purple-500/5">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+                    <h4 class="text-3xl font-bold uppercase italic text-white leading-tight">Mastering Data Structures <br>& Algorithms</h4>
+                    <span class="bg-purple-500/20 text-purple-400 px-4 py-2 rounded-lg text-sm font-bold uppercase">LPU | Jun 2025 - Jul 2025</span>
+                </div>
+                <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+                    Developed a profound understanding of <strong>Big-O notation</strong> and non-linear data structures. Practiced solving complex algorithmic problems, focusing on optimizing memory and execution time for enterprise-grade applications.
+                </p>
+                <a href="https://drive.google.com/file/d/1JUOaUVShhfpYateAaXsEg6m_xgud6Rch/view" target="_blank" class="inline-block bg-purple-600 hover:bg-purple-700 text-white px-10 py-4 rounded-2xl text-sm font-black uppercase transition shadow-lg shadow-purple-500/20">Verify Training</a>
+            </div>
         </div>
     </section>
 
-    <footer class="text-center py-10 text-gray-500 border-t border-gray-800">
-        Made with ❤️ by Rishabh
+    <section id="achievements" class="py-24 max-w-7xl mx-auto px-6">
+        <h3 class="section-title text-green-400">Achievements</h3>
+        <div class="grid md:grid-cols-2 gap-10">
+            <div class="glass-card p-10 rounded-[2.5rem] border-b-4 border-green-500">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-trophy text-green-400 text-4xl mr-5"></i>
+                    <h4 class="text-2xl font-bold uppercase italic">Webka Hackathon</h4>
+                </div>
+                <p class="text-gray-400 text-lg mb-8">Participated in a high-stakes 48-hour development challenge. Built innovative web solutions under tight deadlines while collaborating with a technical team.</p>
+                <a href="https://drive.google.com/file/d/193aeZzxbZCMQJp8oCOol8M6Rrg5qsv4r/view?usp=sharing" target="_blank" class="text-green-400 font-bold border-b-2 border-green-400/20">Documentation</a>
+            </div>
+            <div class="glass-card p-10 rounded-[2.5rem] border-b-4 border-sky-500">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-medal text-sky-400 text-4xl mr-5"></i>
+                    <h4 class="text-2xl font-bold uppercase italic">All India University</h4>
+                </div>
+                <p class="text-gray-400 text-lg mb-8">Represented LPU at the <strong>All India University (AIU)</strong> Zonal Swimming Championship. Demonstrating the same competitive edge in sports as I do in technology.</p>
+                <a href="https://drive.google.com/drive/folders/11zYB9guDEj6lXWm0I-Lr2K_6Q7msq9ku?usp=sharing" target="_blank" class="text-sky-400 font-bold border-b-2 border-sky-400/20">Sports Portfolio</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 max-w-7xl mx-auto px-6 border-t border-white/5">
+        <h3 class="section-title italic text-center">Education</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="glass-card p-10 rounded-3xl text-center">
+                <h4 class="font-bold text-sky-400 italic mb-2 uppercase">B.Tech - CSE</h4>
+                <p class="text-white font-bold">LPU</p>
+                <p class="text-gray-500 text-sm italic">2023 - Present | CGPA: 7.7</p>
+            </div>
+            <div class="glass-card p-10 rounded-3xl text-center">
+                <h4 class="font-bold text-gray-500 italic mb-2 uppercase">Intermediate</h4>
+                <p class="text-white font-bold">KV No. 1 Gorakhpur</p>
+                <p class="text-gray-500 text-sm italic">2022 - 2023 | 63%</p>
+            </div>
+            <div class="glass-card p-10 rounded-3xl text-center">
+                <h4 class="font-bold text-gray-500 italic mb-2 uppercase">Matriculation</h4>
+                <p class="text-white font-bold">KV Uttarlai</p>
+                <p class="text-gray-500 text-sm italic">2021 - 2022 | 75%</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 text-center opacity-30">
+        <p class="text-[10px] tracking-[2em] font-black uppercase text-white">Rishabh Chaubey // 2026</p>
     </footer>
 
 </body>
